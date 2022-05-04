@@ -1,4 +1,17 @@
-<html class="no-js"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-502910351" data-added-by-two-seven="1">(function() {
+<html class="no-js"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;" type="text/css">
+body {
+    font-family: verdana,Arial,sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff}
+
+
+
+
+
+
+<script type="text/javascript" id="__tmpScript-502910351" data-added-by-two-seven="1">(function() {
         window.twoseven = {};
       })();</script><script type="text/javascript" id="__tmpScript-63003981" data-added-by-two-seven="1">(function() {
         window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
