@@ -1,0 +1,531 @@
+<html class="no-js"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-502910351" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-63003981" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-325253220" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-459442402" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-97998410" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-387498743" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-169247069" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-267458682" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-373192690" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-120673658" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-542959904" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-872630273" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-791924312" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-239205141" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-989822631" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-587659518" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-702838521" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-606045334" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-218726695" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-8741867" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-700383487" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-470040534" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-642354659" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-830392722" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-509285801" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-30838646" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-855617924" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-965774318" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-668256584" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-369207502" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-579557464" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-871787081" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-373671541" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-213040913" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-225281514" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-986721986" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-873659861" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><head>
+					<title>Polimi - Autenticazione</title>
+					
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0">
+			
+					
+
+
+
+
+
+<link rel="stylesheet" href="https://webcommons.polimi.it/webcommons/assets/ateneo2014.css.jsp?v=5&amp;lang=it" type="text/css">
+<link rel="stylesheet" href="https://webcommons.polimi.it/webcommons/ajax/libs/jqueryui/1.12.1/themes/polij.css.jsp?v=5&amp;lang=it" type="text/css">
+<link rel="stylesheet" href="https://webcommons.polimi.it/webcommons/assets/mobile.css.jsp?v=5&amp;lang=it" type="text/css">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/aunicalogin/assets/css/base.css?__load_ts=1648127614783">
+
+
+
+<link rel="stylesheet" type="text/css" href="/aunicalogin/assets/css/mobile.css?__load_ts=1648127614783">
+
+
+<link rel="stylesheet" type="text/css" href="/aunicalogin/assets/spid/css/spid-sp-access-button.min.css?__load_ts=1648127614783">
+<link rel="stylesheet" type="text/css" href="/aunicalogin/assets/spid/css/spid-login.css?__load_ts=1648127614783">
+<link rel="stylesheet" type="text/css" href="/aunicalogin/assets/css/ingresso-federato.css?__load_ts=1648127614783">
+
+
+
+<script src="https://webcommons.polimi.it/webcommons/ajax/libs/jqueryui/1.12.1/ui.js.jsp?v=5&amp;lang=it" type="text/javascript"></script>
+<script src="https://webcommons.polimi.it/webcommons/ajax/libs/mobile.js.jsp?v=5&amp;lang=it" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#loading').remove();
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+				<link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"></head>
+				<body class="has-canvas">
+					
+
+
+ 
+
+
+
+
+
+<header class="header sticky-header">
+	<nav class="mobile-header-nav-2 flex">
+		<div class="polij-hamburger-menu">
+			<a id="polijAppMenu" href="#polijAppDrawerMenu" class="btn btn-default" style="display: none;"><span class="sr-only">Toggle menu</span> <span class="fa fa-bars jaf-white"></span></a>
+		</div>
+		<div class="logo-mobile-2">
+			<a title="polimi.it" href="http://www.polimi.it">
+				<img height="44" alt="logo-polimi" src="https://webcommons.polimi.it/webcommons/assets/polimi/logo/2015/polimi_2015_text.png">
+			</a>
+		</div>
+		<div class="polij-user-links">				
+			
+			
+
+
+
+
+
+
+
+
+	
+
+
+						
+		
+		
+		
+		
+		
+			<a href="/aunicalogin/aunicalogin/controller/IdentificazioneUnica.do?evn_jaf_cambio_lingua=evento&amp;lang=EN&amp;screenName=/jsp/identificazione/identificazione&amp;freezecount=true&amp;jaf_currentWFID=main&amp;polij_step=0&amp;__pj0=0&amp;__pj1=9db6e7ed5270c3dc2cbfef152af66642"><img src="https://webcommons.polimi.it/webcommons/assets/english.gif" height="17px"> </a>
+		
+				
+		</div>
+	</nav>
+	<div class="info-DB">
+		
+	</div>
+
+	<div id="user-info-box" class="collapse">
+		<div class="well text-center">
+			
+		</div>
+	</div>
+</header>
+
+<script type="text/javascript">
+$(function(){
+	// position: sticky polyfill
+	var elements = $('header.sticky-header');
+	Stickyfill.add(elements);
+});
+</script>
+
+
+
+<script>
+	$(document).ready(function() {
+		if($('#polijAppDrawerMenu').length == 0) {
+			return;
+		}
+
+		var $drawer = $('#polijAppDrawerMenu');
+
+		$('#polijAppMenu').sidr({
+			name:'polijAppDrawerMenu',
+			source:'#polijAppDrawerMenu',
+			renaming: false,
+			onOpen: function() {
+				$drawer.removeClass('closed');
+				$drawer.addClass('opening');
+			},
+			onOpenEnd: function() {
+				$drawer.removeClass('closed opening').addClass('opened');
+			},
+			onClose: function() {
+				$drawer.removeClass('opened').addClass('closing');
+			},
+			onCloseEnd: function() {
+				$drawer.removeClass('opened closing').addClass('closed');
+			}
+		});
+
+		$('main').on('click', function() {$.sidr('close', 'polijAppDrawerMenu');});
+		$('#polijAppDrawerMenu').removeClass('hidden');
+	    $('#polijAppMenu').show();
+	});
+
+</script>
+
+			
+					<nav id="webview-context-bar" class="sticky webview-context-navbar container-fluid navbar navbar-default">
+						<div class="row poli-navbar text-center accedi_a">
+							
+				     		
+				   				<span class="nome_app_bold">Servizi online</span>
+				   										
+						</div>
+					</nav>
+				
+		 
+
+
+
+
+<script type="text/javascript">
+$(function(){
+	// position: sticky polyfill
+	var elements = $('#context-bar');
+	Stickyfill.add(elements);
+});
+</script>
+
+<script>
+	$(document).ready(function() {
+		if($('#polijAppDrawerMenu').length == 0) {
+			return;
+		}
+
+		var $drawer = $('#polijAppDrawerMenu');
+
+		$('#polijAppMenu').sidr({
+			name:'polijAppDrawerMenu',
+			source:'#polijAppDrawerMenu',
+			renaming: false,
+			onOpen: function() {
+				$drawer.removeClass('closed');
+				$drawer.addClass('opening');
+			},
+			onOpenEnd: function() {
+				$drawer.removeClass('closed opening').addClass('opened');
+			},
+			onClose: function() {
+				$drawer.removeClass('opened').addClass('closing');
+			},
+			onCloseEnd: function() {
+				$drawer.removeClass('opened closing').addClass('closed');
+			}
+		});
+
+		$('main').on('click', function() {$.sidr('close', 'polijAppDrawerMenu');});
+		$('#polijAppDrawerMenu').removeClass('hidden');
+	    $('#polijAppMenu').show();
+	});
+
+</script>
+
+					<div class="container main-page-content">
+						<div class="row">
+
+
+<div class="JafPage container-fluid">
+<div class="row">
+
+	
+
+<div id="table-credenziali" class="fluidInfocard  dimensioneInfoCard "><div class="row infocard-title-row"><div class="col-sm-12 infocard-title">Credenziali Polimi</div></div><div data-infocard-contents="table-credenziali" class="jaf-infocard-contents">
+	<div class="row">
+		<div class="ElementInfoCard2 jaf-card-element">
+			<input name="login" id="login" placeholder="Codice Persona" autofocus="autofocus" type="text" class="jaf-full-width form-control">
+		</div>
+	</div>
+	<div class="row">
+		<div class="ElementInfoCard2 jaf-card-element"><input name="password" id="password" placeholder="Password" type="password" class="jaf-full-width form-control jaf-form-input"></div>
+	</div>
+	<div class="row">
+		<div class="ElementInfoCard2 altezza-min jaf-card-element">
+			<div class="button-left">
+				<button name="evn_conferma" type="submit" class="btn-lg btn-primary btn jaf-btn-big">Accedi</button>
+			</div>
+			
+				
+			
+		</div>
+	</div>
+</div></div>
+							</div>				
+						</div>
+						<div class="sottoForm">
+							
+
+	
+		<div class="fluidInfocard"><div class="jaf-infocard-contents">
+			<div class="row">
+				<div class="ElementInfoCard2 jaf-card-element">
+					<label class="jaf-label "><input name="RESTA_CONNESSO" id="RESTA_CONNESSO" type="checkbox" value="-9223372036854775808" class="jaf-form-input">
+					Resta connesso. <span id="id-1598836-help" class="glyphicon glyphicon-question-sign jaf-help"> </span><div id="tooltip-id-1598837" data-jaf-tooltip-target="id-1598836-help" data-jaf-tooltip-position-tooltipbox="center bottom" data-jaf-tooltip-position-target="center top" data-jaf-tooltip-contenttype="text" style="display: none;">
+Se scegli "Resta connesso", il numero di volte in cui ti verrà chiesto di accedere su questo dispositivo verrà ridotto.
+<br><font color="RED"><b>Per mantenere il tuo account sicuro, utilizza questa opzione solo su dispositivi personali.</b></font>
+</div><script type="text/javascript">
+jQuery(document).ready(function(){
+	jaf_help_add_icon('id-1598836-help');
+	jaf_tooltip_init('tooltip-id-1598837','');
+});
+</script>
+					
+					</label>	
+				</div>
+			</div>
+		</div></div>
+	
+
+
+						</div>			
+					
+			</form>
+			<form method="post" name="" class="jaf-form jaf-mobile-form">	
+				<div class="sottoForm">
+					
+
+	<div id="jaf_accordion_1093779" class="jaf_accordion titolo-accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+		<h3 class="jaf_accordion_header ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Assistenza e informazioni</h3><div class="jaf_accordion_content ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="true" style="display: none;">
+			
+				 
+					
+					
+				<a href="/aunicalogin/aunicalogin/controller/AssistenzaAutenticazione.do?evn_rec_pwd=evento&amp;jaf_currentWFID=main" class="Link">Recupero credenziali Polimi (codice persona e password)</a>
+			
+			
+				
+					<br>
+					
+						
+						
+					<a href="/aunicalogin/aunicalogin/controller/AssistenzaAutenticazione.do?evn_dis_dfa=evento&amp;jaf_currentWFID=main" class="Link">Disattivazione di emergenza autenticazione a due fattori 2FA</a>
+				
+			
+						
+			
+				<br>
+				
+					
+					
+				<a href="https://www.ict.polimi.it/autenticazione-e-autorizzazione/identita-e-autenticazione/" class="Link" target="_blank">Informazioni, domande frequenti e assistenza</a>
+							
+		</div>
+	</div><script type="text/javascript">
+ jaf_accordion({"options":{"heightStyle":"content","header":"> .jaf_accordion_header","active":false,"collapsible":true},"selector":"#jaf_accordion_1093779"})
+</script>
+
+				
+
+
+				</div>
+			</form>
+	</main>
+</div></div>
+						</div>
+					</div>
+			
+					
+ 
+
+
+
+
+
+<footer class="polifooter">
+	aunicalogin
+	
+	25.1.0
+</footer>
+
+				
+					
+		<div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div></body></html>
