@@ -1,200 +1,398 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title> MAN COM System �  </title>
-    <meta name="viewport" content="width=device-width, initial-scale=-1">
-    <link rel="icon" type="image/x-icon" href="images/icon.ico" >
-    <style type="text/css">
-        * {
-            box-sizing: border-box;
-        }
+    <title>SurvivingEarth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/icona.ico" />
+    <style>
 
-        html {
-            min-width: 550px;
-            position: relative;
-        }
-
-
+        
         body {
-            background-color: black;
-            padding: 10px;
-            margin-top: 10px;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            min-width: min-content;
         }
 
-        .header {
-            background-color: transparent;
-            padding: 0px;
-            text-align: center;
-            text-decoration: double;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 17px;
-            margin-top: -10px;
-            color: #3CB371;
+        .column {
+            margin: 5% 1% 20px 70px;
+            padding: 10px 20px 0px 20px;
+            place-content: center;
             
+        }
+        
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            [class*="col-"] {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .formula {
+                margin-top: -80px !important;
+                width: 108%;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .productivity {
+                margin-left: -10px !important;
+                
+            }
         }
 
         .topnav {
-            overflow: hidden;
-            background-color: black;
-            border-radius: 10px;
-            text-align: center;
-            padding: 5px;
-            border: solid;
-            border-color: #3CB371;
-            border-width: 2px;
-            position:relative;
-            margin-top:auto;
-            margin:10px;
+            padding: 0px;
+            width:100%;
+            margin: 0px 0px 0px 0px;
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+            cursor: pointer;
+            z-index: +1;
+            display: inline-block;
+            border-radius: 0px !important;
 
             
         }
-            .topnav a.active {
-                color: #3CB371;
-                padding: 10px 10px 10px 10px;
-                border-radius: 10px;
-                background-color: black;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-size: 20px;
-                text-decoration: none;
-                border: solid;
-                border-color: #3CB371;
-                min-width: auto;
-                display: inline-flex;
-            }
 
-            .topnav a:hover {
-                background-color: #3CB371;
-                color: black;
-                border: solid;
-                border-color: #282828;
-            }
+        
+
+        nav a:hover {
+            background-color: white;
+            color: black;
+            transition: 0.7s;
+                        
+        }
+
+        .m_green {
+            background-color: #3CB371;
+        }
+
+        .m_white {
+            background-color: azure;
+        }
+
+        .m_grey {
+            background-color: #E0E0E0;
+        }
+
+        .card, .card-2 {
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            font-weight: 300;
+        }
+
+        .left-align {
+            text-align: left !important;
+        }
+
+        .center-align {
+            text-align: center !important;
+        }
+
+        .bar-item {
+            margin: 0px 0px 0px 0px;
+            display: inline-grid;
+            font-size: 21px;
+            color: white;
+
+        }
+
+
+        .padding-large {
+            padding: 21px 24px !important;
+        }
+
+        .button {
+            vertical-align: middle;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+
+        header {
+            padding: 100px;
+            margin: auto;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            min-width: inherit;
+        }
+
+        .title {
+            margin: auto;
+            font-family: "Montserrat", sans-serif;
+            font-size: 80px;
+            color: white;
+            min-width: inherit;
+        }
+
+        .subtitle {
+            font-family: "Montserrat", sans-serif;
+            font-size: 30px;
+            margin-bottom: 0px;
+            
+        }
 
         .center {
             display: block;
             margin-left: auto;
             margin-right: auto;
-            text-align: center;
+            margin-top: 0px;
         }
 
-        .column {
-            float: left;
-            width: 33.33%;
-        }
-
-        .quote {
-            background-color: #3CB371;
-            border-radius: 25px;
-            padding: 10px 10px 10px 10px;
-            text-align: center;
-            font-size: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            border: solid;
-            border-width: 2px;
-            border-color: #3CB371;
+        .logo {
             position: relative;
-            top: 10%;
+            padding: 0px;
+            animation: animated_logo 8s, spin 4s infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation: animated_logo 8s, spin 4s infinite;
+            -webkit-animation-iteration-count: infinite;
         }
-            .quote:hover {
-                background: black;
-                color: #3CB371;
-                padding: 10px 10px 10px 10px;
-                text-align: center;
-                font-size: 20px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                border: solid;
-                border-width: 2px;
-                border-color: #3CB371;
+
+        @-webkit-keyframes animated_logo {
+            0% {
+                left: 0px;
+                top: 0px;
             }
 
-        .title {
-            text-align: center;
-            text-decoration: double;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 30px;
-            color: #282828;
-            margin: auto;
-            margin-top: 30px;
-            padding: 4px;
-            width: 1200px;
-            border-bottom: 2px solid black;
-        }
+            25% {
+                left: 230px;
+                top: 0px;
+            }
 
+            50% {
+                left: 0px;
+                top: 0px;
+            }
 
+            75% {
+                left: -230px;
+                top: 0px;
+            }
 
-
-
-        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 800px) {
-            .leftcolumn, .rightcolumn, .column, .map, .quotes {
-                width: 100%;
-                padding: 0;
-                overflow-x: hidden;
-                display: flex;
+            100% {
+                left: 0px;
+                top: 0px;
             }
         }
 
-        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @-webkit-keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+        .wrapper {
+            font-family: "Montserrat", sans-serif;
+            font-size: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+            }
+
         
 
-        @media (max-width: 640px) {
-            .html {
-            }
+        
+        .formula {
+            max-width: 120%;
+            position: center;
+            margin-top: 35%;
+            height: auto;
+            width: auto\9; /* ie8 */
+            display: block;
         }
 
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #3CB371;
-            color: black;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .productivity {
+            max-width: 100%;
+            position: center;
+            margin-left:-10px;
+            margin-top:20px;
+            height: auto;
+            width: auto\9; /* ie8 */
+            display: block;
         }
 
-        .intro {
-            color: #3CB371;
-            text-align: center;
-            font-size: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
         }
-       
+
+        .icon_title {
+            margin-bottom: 5px;
+        }
+
+        ul.a {
+            list-style-type: disclosure-closed;
+        }
     </style>
 </head>
-<body>
-    <img src="images/LOGO.png" width="290" height="240" alt="Nada" class="center header" />
-    <p>
-        <blockquote class="header">
-            <em>
-                Intellectual Vandalism<br />
-                A reliable solution to modern societal decade<br /><br />
-                
-            </em>
-        </blockquote>
-    </p>
-    <div class="topnav">
-        <a href="#Root" class="active">Becoming Root</a>
-        <a href="#Obs" class="active"> Planned Obsolescence and Initial Configurations</a>
-        <a href="#" class="active">Loseless Data Compression</a>
-        <a href="#" class="active">NPC Tampering</a>
-        <a href="#" class="active">Disk Cloning</a>
-        <a href="#" class="active">Contact us!</a>
+<body class="container-fluid">
+
+    <nav class="topnav m_green card center-align container-fluid navbar">
+        <a href="#Home" class="bar-item padding-large button"> Home</a>
+        <a href="#SurvivalKits" class="bar-item padding-large button"> Survival Kit</a>
+        <a href="#Water" class="bar-item padding-large button"> Water</a>
+        <a href="#Fire" class="bar-item padding-large button"> Fire</a>
+        <a href="#Shelter" class="bar-item padding-large button"> Shelter</a>
+        <a href="#Food" class="bar-item padding-large button"> Food</a>
+        <a href="#WeatherDangersHazards" class="bar-item padding-large button"> Weather</a>
+        <a href="#FirstAid" class="bar-item padding-large button"> First Aid</a>
+    </nav>
+    <header class="header m_green container-fluid">
+        <h1 class="center-align title container-fluid">SurvivingEarth</h1>
+        <img src="ghianda.svg" alt="" width=50 height=50 class="center logo" />
+    </header>
+    <div class="wrapper row">
+        <div class="col-5 column">
+
+            <p class="subtitle"> <img class="icon_title" src="images/caution-sign-icon.png" alt="" width=35 height="35" />  Risk Evaluation </p>
+            <p>
+                Going to the beach is always fun, isn’t it? And yet such pleasurable environment can easily put your life at risk.
+                I bet you are thinking about shark attacks, or poisonous jellyfish. Truth is, you shouldn’t be worried about
+                any of these really. Sure, a shark can be pretty deadly, but what’s the likelihood of encountering one? Instead, a jellyfish
+                is more common but hardly lethal. Let’s try to be more rational.
+                What about skin cancer? How many times did you get sunburnt while enjoying a swim or a napping on the sand? Melanomas
+                are significantly more probable and fatal than you think. And yet, <em>
+                    most people wouldn’t even consider them as incumbent
+                    “dangers”.
+                </em>
+                The interesting question here is: Why? Our cognitive processes are influenced by two forces:
+                <strong> rationality </strong> (logic, pragmatism) and <strong> instinct </strong> (intuitions,
+                fear and other emotions dictated by past experiences). Every time we evaluate risk, rational thoughts
+                will be filtered by unconscious impulses. Before taking any decision, the critical assessment of your
+                risk perception should always take in consideration the <em>"Terror"</em> (or the <em>“Optimism”</em>), as
+                measurements of the impact that instincts and emotions will have on your analysis. Pay attention to this,
+                or you'll end up dying of skin cancer while looking out for sharks.
+            </p>
+        </div>
+        <div class="col-5 column">
+                <img class="formula" src="images/formula.png" alt="" />
+        </div>
     </div>
-    <br />
-    <p class="intro">
-        And through soft degrees subdue them to the useful and the good<br />
-        Most blameless is he, centered in the sphere of common duties<br />
-        Decent not to fail in offices of remoteness<br />
-        And pay meet adoration to my hacking gods<br />
-        When I'm gone, he works his work, I mine.
-    </p>
+    <div class="wrapper row m_grey">
+        <div class="col-5 column">
+            <img src="images/survival-likelihood.png" alt="" class="productivity" />
+        </div>
+        <div class="col-5 column">
+            <p class="subtitle"> <img class="icon_title" src="images/danger-sign-icon.png" alt="" width=35 height="35" />  Increasing survival likelihood </p>
+            <p>
+                <ul class="a">
+                    <li>
+                        <strong>Training and Knowledge</strong><br />Experience shapes our brain’s functions and structure throughout our life.
+                        Survival knowledge, continuous training, and pragmatic simulations will help us “re-program” our behaviors to ensure a more
+                        effective reaction to stress. Regular practice of survival skills is what makes our instincts more helpful than harmful during a
+                        crisis.
+                    </li>
+                    <li>
+                        <strong>Physical Fitness</strong><br />If you are obese your survival likelihood drops in almost any disastrous condition.
+                        Overweight people are slower and more frequently subject to heart-attack. Healthy habits (proper exercise and diet,
+                        abstinence from tobacco, alcohol, and drugs) can prove paramount for your endurance.
+                    </li>
+                    <li>
+                        <strong>Resilience and Psychological Attitude</strong><br />
+                        Resilience is about controlling our psychological responses to evolving surrounding conditions.
+                        Fostering resilience finds roots in the development of: (i) the belief of being able to influence events,
+                        (ii) the inclination to seek for meaning in uncertain circumstances, (iii) the willingness to learn from our experiences.
+                        Never underestimate the relevance of an adequate psychological attitude in tackling extreme pressure. Finding a significant
+                        purpose in misadventures can undoubtedly save your life!
+                    </li>
+                    <li>
+                        <strong>Equipment Planning</strong><br />
+                        Whether you make it yourself or purchase it, the way you set up your kit is limited only by your imagination.
+                        Stick around for some more detailed instructions about it!
+                    </li>
+                    <li>
+                        <strong>Leadership and Team Work</strong><br />
+                        Being in a group has advantages and disadvantages. Combined skills, knowledge and resources are balanced by
+                        potential conflicts and shared vulnerabilities. Assess weak-points (old age, injuries, antisocial behaviors)
+                        as well as resourceful members of your team (owners of food and water supplies, medicines, competences, etc.).
+                    </li>
+
+                </ul>
+
+            </p>
+        </div>
+
+    </div>
+
+    <div class="wrapper row">
+        <div class="col-5 column">
+
+            <p class="subtitle"> <img class="icon_title" src="images/caution-sign-icon.png" alt="" width=35 height="35" />  Risk Evaluation </p>
+            <p>
+                Going to the beach is always fun, isn’t it? And yet such pleasurable environment can easily put your life at risk.
+                I bet you are thinking about shark attacks, or poisonous jellyfish. Truth is, you shouldn’t be worried about
+                any of these really. Sure, a shark can be pretty deadly, but what’s the likelihood of encountering one? Instead, a jellyfish
+                is more common but hardly lethal. Let’s try to be more rational.
+                What about skin cancer? How many times did you get sunburnt while enjoying a swim or a napping on the sand? Melanomas
+                are significantly more probable and fatal than you think. And yet, <em>
+                    most people wouldn’t even consider them as incumbent
+                    “dangers”.
+                </em>
+                The interesting question here is: Why? Our cognitive processes are influenced by two forces:
+                <strong> rationality </strong> (logic, pragmatism) and <strong> instinct </strong> (intuitions,
+                fear and other emotions dictated by past experiences). Every time we evaluate risk, rational thoughts
+                will be filtered by unconscious impulses. Before taking any decision, the critical assessment of your
+                risk perception should always take in consideration the <em>"Terror"</em> (or the <em>“Optimism”</em>), as
+                measurements of the impact that instincts and emotions will have on your analysis. Pay attention to this,
+                or you'll end up dying of skin cancer while looking out for sharks.
+            </p>
+        </div>
+        <div class="col-5 column">
+            <img class="formula" src="images/formula.png" alt="" width=700px />
+        </div>
+    </div>
     
-
-    <div class="quote">
-        Hello world! Behold an incredibly boring website! <br /> ManCom is now under <strong>maintenance</strong>... <br />
-        We invite all users to be patient and keep their seatbelt on!
-    </div>
-    <br /><br /><br /><br /><br /><br />
-    <div class="footer"> Powered by Narakura </div>
-
 </body>
 </html>
