@@ -91,6 +91,12 @@
             }
         }
 
+        @media only screen and (max-width: 1000px) {
+            #controlyourreaction, #elaboratetheexperience, #prioritize {
+                width: 35% !important;
+            }
+        }
+
         .topnav {
             padding: 0px;
             width:100%;
@@ -124,6 +130,10 @@
 
         .m_grey {
             background-color: #E0E0E0;
+        }
+
+        .m_dark_green {
+            background-color: #177245; 
         }
 
         .card, .card-2 {
@@ -283,21 +293,40 @@
         }
 
         .boxitem {
-            margin: 10px 10px 10px 10px;
             background-color: transparent;
             
         }
 
         #prioritize, #controlyourreaction, #elaboratetheexperience  {
             margin-top:20px;
+            vertical-align:middle;
         }
 
+        #finaladvice {
+            padding: 90px 100px 60px 100px;
+            
+        }
+
+        .contactus {
+            -webkit-box-shadow: 0px -1px 3px;
+            -moz-box-shadow: 0px -1px 3px;
+            box-shadow: 0px -1px 3px;
+            display: inline-flex !important;
+            padding: 30px 100px 30px 100px;
+        }
+
+            .contactus a:hover {
+                transform: rotate(360deg);
+                transition-duration: 1.5s;
+            }
+
+       
 
     </style>
 </head>
 <body class="container-fluid">
 
-    <nav class="topnav m_green card center-align container-fluid navbar">
+    <nav class="topnav m_dark_green card center-align container-fluid navbar">
         <a href="#Home" class="bar-item padding-large button"> Home</a>
         <a href="#SurvivalKits" class="bar-item padding-large button"> Survival Kit</a>
         <a href="#Water" class="bar-item padding-large button"> Water</a>
@@ -307,7 +336,7 @@
         <a href="#WeatherDangersHazards" class="bar-item padding-large button"> Weather</a>
         <a href="#FirstAid" class="bar-item padding-large button"> First Aid</a>
     </nav>
-    <header class="header m_green container-fluid">
+    <header class="header m_dark_green container-fluid">
         <h1 class="center-align title container-fluid">Surviving Apes</h1>
         <h5 class="center-align container-fluid mainsubtitle"> A remarkably overoptimistic guide to survive extreme circumstances</h5>
         <img src="ghianda.svg" alt="" width=50 height=50 class="center logo" />
@@ -395,13 +424,27 @@
         </div>
         <div class="col-8 column">
             <div class="boxitem">
-                <p class="subtitle">  Part 1 </p>
+                <p class="subtitle"> Control your reaction </p>
                 <p>
-                    Going to the beach is always fun, isn’t it? And yet such pleasurable environment can easily put your life at risk.
-                    I bet you are thinking about shark attacks, or poisonous jellyfish. Truth is, you shouldn’t be worried about
-                    any of these really. Sure, a shark can be pretty deadly, but what’s the likelihood of encountering one? Instead, a jellyfish
-                    is more common but hardly lethal. Let’s try to be more rational.
+                    Panicking paralyzes you and prevents decisive actions. It’s like in the movies. The guy that freaks out is the first who dies.
+                    You don’t want to be that character. It appears to be true: some people are naturally gifted when it comes to handling emergencies.
+                    That said, practice makes perfect.<strong>The goal is to be trained enough to consciously and deliberately choose 
+                    our response to disasters.</strong>Keep in mind the following points:
+                    <ul>
+                        <li>
+                            In case of panic attack, slowly and gently breath in from your nose and out from your mouth. Focus on the surrounding environment.
+                        </li>
+                        <li>
+                            Plan for the worst. Literally. This is more than just being psychologically ready; it’s about being pragmatically prepared.
+                            It's much easier to adjust to pleasant surprises than to unpleasant ones.
+                            Roleplay simulations will play a central role here, especially if performed in the “learn from the mistakes of others” mindset.
+                        </li>
+                        <li>
+                            Fear has the unfortunate trait of being highly contagious. If you are part of a group and someone is panicking during an emergency,
+                            take control over the group. Distract them from the terror. Bring their focus back on the few actions that can save their lives.
 
+                        </li> 
+                    </ul>
                 </p>
             </div>
         </div>
@@ -417,13 +460,30 @@
         </div>
         <div class="col-8 column">
             <div class="boxitem">
-                <p class="subtitle">  Part 2 </p>
+                <p class="subtitle">  Prioritize </p>
                 <p>
-                    Going to the beach is always fun, isn’t it? And yet such pleasurable environment can easily put your life at risk.
-                    I bet you are thinking about shark attacks, or poisonous jellyfish. Truth is, you shouldn’t be worried about
-                    any of these really. Sure, a shark can be pretty deadly, but what’s the likelihood of encountering one? Instead, a jellyfish
-                    is more common but hardly lethal. Let’s try to be more rational.
-
+                    Ok, now you’ve managed to calm down. You are luckily still breathing, conscious about your surroundings.
+                    <strong>What do you do now?</strong>Yes, you need a shelter. Yes, you’ll soon need water and food, and for
+                    that you’ll need a fire. And what about a rescue signal? In reality, the prioritization of such necessities
+                    varies drastically depending on the <em>environmental conditions </em>around you. Are you in the middle of
+                    the desert or on top of a glacier?<br>
+                    Having said that, experts usually recommend proceeding in the following order:
+                    <ol>
+                        <li>
+                            <strong>Handle incumbent necessities.</strong> If there are any urgent safety and/or health concerns
+                            you should deal with them immediately. Temperature and injuries tend to be the most common.
+                        </li>
+                        <li>
+                            <strong>Signal for rescue.</strong> Ok, now that you’ve taken care of immediate exigencies, let’s try to maximize
+                            your chances of getting back home as soon as possible. The alternatives are many: blow a whistle, build a symbol
+                            to communicate with aerial support, use fire and smoke,  move a mirror or reflecting surface to reflect sunlight, etc.
+                        </li>
+                        <li>
+                            <strong> Focus on long-term survival. </strong>You’ll find useful advice in the next sections of this website.
+                            And don’t forget, always try to be realistic about your chances of rescue. Accept the fact that you’ll probably be
+                            on your own for a long time.
+                        </li>
+                    </ol>
                 </p>
             </div>
         </div>
@@ -439,13 +499,13 @@
         </div>
         <div class="col-8 column">
             <div class="boxitem">
-                <p class="subtitle">  Part 2 </p>
+                <p class="subtitle">  Elaborate the experience </p>
                 <p>
-                    Going to the beach is always fun, isn’t it? And yet such pleasurable environment can easily put your life at risk.
-                    I bet you are thinking about shark attacks, or poisonous jellyfish. Truth is, you shouldn’t be worried about
-                    any of these really. Sure, a shark can be pretty deadly, but what’s the likelihood of encountering one? Instead, a jellyfish
-                    is more common but hardly lethal. Let’s try to be more rational.
-
+                    After the cessation of the crisis and your successful survival, when all the suffering and danger will have passed, 
+                    dissociation will probably arise. You will have lived a <strong>traumatic experience</strong> likely to negatively affect 
+                    your psychological health for the rest of your life. <br />
+                    <strong>If you need help to elaborate the experience, seek help.</strong> Narration can represent an effective 
+                    tool both for your recovery and for the education and empowering of others.<br /><br /><br />
                 </p>
             </div>
         </div>
@@ -454,18 +514,28 @@
 
 
     <div class="wrapper row m_grey">
-        <div class="col-5 column">
-            <img src="images/survival-likelihood.png" alt="" class="productivity" />
-        </div>
-        <div class="col-5 column">
-            <p class="subtitle"> <img class="icon_title" src="images/danger-sign-icon.png" alt="" width=35 height="35" />  Inform others of your plans! </p>
-            <p>
-                DO IT!
-            </p>
-        </div>
+            <div id="finaladvice">
+                <p class="center-align">
+                    <em>Last but not least...</em>
+                </p>
+                <p class="subtitle center-align"> <img class="icon_title" src="images/tellpeople.png" alt="" width=35 height="35" />  <u>Inform others of your plans!</u> <img class="icon_title" src="images/tellpeople.png" alt="" width=35 height="35" /></p>
+                <p class="center-align">
+                    Any time you are planning – for any reason – to travel to remote areas make sure that at least two or three people know about 
+                    your precise intentions. Remember to clearly explain the nature of your activity, your route, the schedule of your journey and 
+                    the means of communication you’ll be using. If you want to be extra-safe, similarly inform local authorities.
+                </p>
+            </div>
 
 
     </div>
 
+    <div class="row m_dark_green">
+        <div class="center-align contactus">
+            <a class="center" href="#email"> <img class="center" src="images/email.png" alt="" width="50px" /> </a>
+            <a class="center" href="#telephone"><img class="center" src="images/telephone.png" alt="" width="50px" /></a>
+            <a class="center" href="#facebook"><img class="center" src="images/facebook.png" alt="" width="50px" /></a>
+            <a class="center" href="#instagram"> <img class="center" src="images/instagram.png" alt="" width="50px" /></a>
+        </div>
+    </div>
 </body>
 </html>
