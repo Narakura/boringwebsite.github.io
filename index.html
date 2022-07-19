@@ -3,332 +3,17 @@
 <head>
     <title>Surviving Apes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="icon" href="images/icona.ico" />
-    <style>
-       
-        body {
-            padding: 0px;
-            margin: 0px;
-            box-sizing: border-box;
-            min-width: min-content;
-        }
 
-        .column {
-            margin: 5% 1% 20px 70px;
-            padding: 10px 20px 0px 20px;
-            place-content: center;
-            
-        }
-        
-        .col-1 {
-            width: 8.33%;
-        }
-
-        .col-2 {
-            width: 16.66%;
-        }
-
-        .col-3 {
-            width: 25%;
-        }
-
-        .col-4 {
-            width: 33.33%;
-        }
-
-        .col-5 {
-            width: 41.66%;
-        }
-
-        .col-6 {
-            width: 50%;
-        }
-
-        .col-7 {
-            width: 58.33%;
-        }
-
-        .col-8 {
-            width: 66.66%;
-        }
-
-        .col-9 {
-            width: 75%;
-        }
-
-        .col-10 {
-            width: 83.33%;
-        }
-
-        .col-11 {
-            width: 91.66%;
-        }
-
-        .col-12 {
-            width: 100%;
-        }
-
-        @media only screen and (max-width: 1000px) {
-            [class*="col-"] {
-                width: 80%;
-            }
-        }
-
-        @media only screen and (max-width: 1000px) {
-            .formula {
-                margin-top: -80px !important;
-                margin-bottom: 0px !important;
-                width: 108%;
-            }
-        }
-
-        @media only screen and (max-width: 1000px) {
-            .productivity {
-                margin-left: -10px !important;
-                
-            }
-        }
-
-        @media only screen and (max-width: 1000px) {
-            #controlyourreaction, #elaboratetheexperience, #prioritize {
-                width: 35% !important;
-            }
-        }
-
-        .topnav {
-            padding: 0px;
-            width:100%;
-            margin: 0px 0px 0px 0px;
-            font-family: "Montserrat", sans-serif;
-            position: relative;
-            cursor: pointer;
-            z-index: +1;
-            display: inline-block;
-            border-radius: 0px !important;
-
-            
-        }
-
-        
-
-        nav a:hover {
-            background-color: white;
-            color: black;
-            transition: 0.7s;
-                        
-        }
-
-        .m_green {
-            background-color: #3CB371;
-        }
-
-        .m_white {
-            background-color: azure;
-        }
-
-        .m_grey {
-            background-color: #E0E0E0;
-        }
-
-        .m_dark_green {
-            background-color: #177245; 
-        }
-
-        .card, .card-2 {
-            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-            font-weight: 300;
-        }
-
-        .left-align {
-            text-align: left !important;
-        }
-
-        .center-align {
-            text-align: center !important;
-        }
-
-        .bar-item {
-            margin: 0px 0px 0px 0px;
-            display: inline-grid;
-            font-size: 21px;
-            color: white;
-
-        }
-
-
-        .padding-large {
-            padding: 21px 24px !important;
-        }
-
-        .button {
-            vertical-align: middle;
-            text-decoration: none;
-            text-align: center;
-            cursor: pointer;
-            
-        }
-
-        header {
-            padding: 100px;
-            margin: auto;
-            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-            min-width: inherit;
-        }
-
-        .title {
-            margin: auto;
-            font-family: "Montserrat", sans-serif;
-            font-size: 100px;
-            color: white;
-            min-width: inherit;
-        }
-
-        .mainsubtitle {
-            color: white;
-            font-family: "Montserrat", sans-serif;
-        }
-
-        .subtitle {
-            font-family: "Montserrat", sans-serif;
-            font-size: 30px;
-            margin-bottom: 0px;
-            
-        }
-
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 0px;
-        }
-
-        .logo {
-            position: relative;
-            padding: 0px;
-            animation: animated_logo 8s, spin 4s infinite;
-            animation-iteration-count: infinite;
-            -webkit-animation: animated_logo 8s, spin 4s infinite;
-            -webkit-animation-iteration-count: infinite;
-        }
-
-        @-webkit-keyframes animated_logo {
-            0% {
-                left: 0px;
-                top: 0px;
-            }
-
-            25% {
-                left: 230px;
-                top: 0px;
-            }
-
-            50% {
-                left: 0px;
-                top: 0px;
-            }
-
-            75% {
-                left: -230px;
-                top: 0px;
-            }
-
-            100% {
-                left: 0px;
-                top: 0px;
-            }
-        }
-
-        @-webkit-keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-
-
-        .wrapper {
-            font-family: "Montserrat", sans-serif;
-            font-size: 20px;
-            text-align: justify;
-            text-justify: inter-word;
-            }
-
-        
-
-        
-        .formula {
-            max-width: 120%;
-            position: center;
-            margin-top: 35%;
-            margin-bottom: 25%;
-            height: auto;
-            width: auto\9; /* ie8 */
-            display: block;
-        }
-
-        .productivity {
-            max-width: 100%;
-            position: center;
-            margin-left:-10px;
-            margin-top:20px;
-            height: auto;
-            width: auto\9; /* ie8 */
-            display: block;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .icon_title {
-            margin-bottom: 5px;
-        }
-
-        ul.a {
-            list-style-type: disclosure-closed;
-        }
-
-        .boxitem {
-            background-color: transparent;
-            
-        }
-
-        #prioritize, #controlyourreaction, #elaboratetheexperience  {
-            margin-top:20px;
-            vertical-align:middle;
-        }
-
-        #finaladvice {
-            padding: 90px 100px 60px 100px;
-            
-        }
-
-        .contactus {
-            -webkit-box-shadow: 0px -1px 3px;
-            -moz-box-shadow: 0px -1px 3px;
-            box-shadow: 0px -1px 3px;
-            display: inline-flex !important;
-            padding: 30px 100px 30px 100px;
-        }
-
-            .contactus a:hover {
-                transform: rotate(360deg);
-                transition-duration: 1.5s;
-            }
-
-       
-
-    </style>
 </head>
 <body class="container-fluid">
 
     <nav class="topnav m_dark_green card center-align container-fluid navbar">
-        <a href="#Home" class="bar-item padding-large button"> Home</a>
-        <a href="#SurvivalKits" class="bar-item padding-large button"> Survival Kit</a>
+        <a href="index.html" class="bar-item padding-large button"> Home</a>
+        <a href="Survival_Kit.html" class="bar-item padding-large button"> Survival Kit</a>
         <a href="#Water" class="bar-item padding-large button"> Water</a>
         <a href="#Fire" class="bar-item padding-large button"> Fire</a>
         <a href="#Shelter" class="bar-item padding-large button"> Shelter</a>
@@ -418,7 +103,7 @@
     <div class="wrapper row">
         <div class="col-2 column">
             <div class="boxitem">
-                <img id="controlyourreaction" src="images/controlyourreaction.png" class="center" alt="" width="80%" />
+                <img id="controlyourreaction" src="images/controlyourreaction.png" class="center drawing" alt="" width="80%" />
             </div>
 
         </div>
@@ -428,8 +113,8 @@
                 <p>
                     Panicking paralyzes you and prevents decisive actions. It’s like in the movies. The guy that freaks out is the first who dies.
                     You don’t want to be that character. It appears to be true: some people are naturally gifted when it comes to handling emergencies.
-                    That said, practice makes perfect.<strong>The goal is to be trained enough to consciously and deliberately choose 
-                    our response to disasters.</strong>Keep in mind the following points:
+                    That said, practice makes perfect.<strong><br />The goal is to be trained enough to consciously and deliberately choose 
+                    our response to disasters.</strong><br />Keep in mind the following points:
                     <ul>
                         <li>
                             In case of panic attack, slowly and gently breath in from your nose and out from your mouth. Focus on the surrounding environment.
@@ -454,7 +139,7 @@
     <div class="wrapper row">
         <div class="col-2 column">
             <div class="boxitem">
-                <img id="prioritize" src="images/prioritize.png" class="center" alt="" width="80%" />
+                <img id="prioritize" src="images/prioritize.png" class="center drawing" alt="" width="80%" />
             </div>
 
         </div>
@@ -493,7 +178,7 @@
     <div class="wrapper row">
         <div class="col-2 column">
             <div class="boxitem">
-                <img id="elaboratetheexperience" src="images/elaboratetheexperience.png" class="center" alt="" width="80%" />
+                <img id="elaboratetheexperience" src="images/elaboratetheexperience.png" class="center drawing" alt="" width="80%" />
             </div>
 
         </div>
