@@ -12,7 +12,23 @@
             place-content: center;
             
         }
-        
+
+            .column a:link {
+                color: forestgreen !important;
+            }
+
+            .column a:hover {
+                color: darkgreen !important;
+                background-color: lightgrey !important;
+                
+            }
+
+            .column a:active {
+                color:forestgreen !important;
+                background-color: darkgrey;
+            }
+
+                    
         .col-1 {
             width: 8.33%;
         }
