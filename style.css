@@ -24,6 +24,10 @@
         0%{margin-right:70px;}
         100%{margin-right: 20px;}
       }
+        @keyframes slide_from_below {
+        0%{margin-bottom:1000px;}
+        100%{margin-bottom: auto;}
+      }
 
 
         .column {
