@@ -6,11 +6,31 @@
             min-width: min-content;
         }
 
+        @keyframes reveal{
+        0%{opacity: 0;}
+        20%{opacity: 0,2;}
+        30%{opacity:0,3}
+        50%{opacity:0,5}
+        80%{opacity: 0,8;}
+        100%{opacity: 1;}
+      }
+
+        @keyframes slide_from_left{
+        0%{margin-left:-800px;}
+        100%{margin-left:70px;}
+      }
+
+        @keyframes slide_from_right{
+        0%{margin-right:70px;}
+        100%{margin-right: 20px;}
+      }
+
+
         .column {
             margin: 5% 1% 20px 70px;
             padding: 10px 20px 0px 20px;
             place-content: center;
-            
+            animation: reveal 3s;
         }
 
             .column a:link {
@@ -282,7 +302,8 @@
             margin-top:20px;
             height: auto;
             width: auto\9; /* ie8 */
-            display: block;
+            
+            
         }
 
         .row:after {
@@ -352,7 +373,7 @@
         }
 
 
-
+        
 
 
 
